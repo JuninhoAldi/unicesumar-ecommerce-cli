@@ -48,7 +48,7 @@ public class Main {
             System.out.println("5 - Sair");
             System.out.print("Escolha uma opção: ");
             option = scanner.nextInt();
-            scanner.nextLine(); // Consumir a quebra de linha
+            scanner.nextLine(); 
 
             switch (option) {
                 case 1:
@@ -75,23 +75,22 @@ public class Main {
                     UUID uuid = UUID.randomUUID();
                     User user = new User(uuid, name, email, password);
                     listaDeUsuarios.save(user);
-                    System.out.println("Usuário cadastrado com sucesso! UUID: " + uuid);
+                    System.out.println("Usuário cadastrado");
                     break;
 
                 case 4:
-                    System.out.println("\n📌 Lista de Usuários Cadastrados:");
-                    List<User> users = listaDeUsuarios.findAll();
+                    System.out.println("\nLista de Usuários Cadastrados:");
 
+                    List<User> users = listaDeUsuarios.findAll();
                     if (users.isEmpty()) {
-                        System.out.println("❌ Nenhum usuário cadastrado.");
+                        System.out.println("Nenhum usuário cadastrado.");
                     } else {
-                        System.out.println("+--------------------------------------+----------------------+----------------------+");
-                        System.out.printf("| %-36s | %-20s | %-20s |\n", "UUID", "Nome", "E-mail");
-                        System.out.println("+--------------------------------------+----------------------+----------------------+");
                         for (User u : users) {
-                            System.out.printf("| %-36s | %-20s | %-20s |\n", u.getUuid(), u.getName(), u.getEmail());
+                            System.out.println("UUID: " + u.getUuid());
+                            System.out.println("Nome: " + u.getName());
+                            System.out.println("E-mail: " + u.getEmail());
+                            System.out.println("---");
                         }
-                        System.out.println("+--------------------------------------+----------------------+----------------------+");
                     }
                     break;
 
