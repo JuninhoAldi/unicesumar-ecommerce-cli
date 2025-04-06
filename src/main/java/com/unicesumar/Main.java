@@ -2,6 +2,7 @@ package com.unicesumar;
 
 import com.unicesumar.entities.Product;
 import com.unicesumar.repository.ProductRepository;
+import com.unicesumar.repository.UserRepository;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -13,6 +14,8 @@ import java.util.UUID;
 public class Main {
     public static void main(String[] args) {
         ProductRepository listaDeProdutos = null;
+        UserRepository listaDeUsuarios = null;
+
         Connection conn = null;
         
         // Parâmetros de conexão
@@ -23,6 +26,7 @@ public class Main {
             conn = DriverManager.getConnection(url);
             if (conn != null) {
                 listaDeProdutos = new ProductRepository(conn);
+                listaDeUsuarios = new UserRepository(conn);
             } else {
                 System.out.println("Falha na conexão.");
                 System.exit(1);
