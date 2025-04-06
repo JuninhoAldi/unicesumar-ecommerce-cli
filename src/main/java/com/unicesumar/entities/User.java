@@ -31,4 +31,8 @@ public class User extends Entity {
     public String getPassword() {
         return password;
     }
+
+    public String toString() {
+        return String.format("%s - %s", this.name, this.email);
+    }
 }

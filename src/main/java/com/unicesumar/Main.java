@@ -1,6 +1,7 @@
 package com.unicesumar;
 
 import com.unicesumar.entities.Product;
+import com.unicesumar.entities.User;
 import com.unicesumar.repository.ProductRepository;
 import com.unicesumar.repository.UserRepository;
 
@@ -61,9 +62,12 @@ public class Main {
                     break;
                 case 3:
                     System.out.println("Cadastrar Usuário");
+                    listaDeUsuarios.save(new User("Rafael Labegalini", "rafael@example", "1234"));
                     break;
                 case 4:
                     System.out.println("Listar Usuários");
+                    List<User> users = listaDeUsuarios.findAll();
+                    users.forEach(System.out::println);
                     break;
                 case 5:
                     System.out.println("Saindo...");
@@ -73,7 +77,7 @@ public class Main {
                     ;
             }
 
-        } while (option != 3);
+        } while (option != 5);
 
         scanner.close();
         try {
