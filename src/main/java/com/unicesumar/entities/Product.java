@@ -24,4 +24,8 @@ public class Product extends Entity {
     public double getPrice() {
         return this.price;
     }
+
+    public String toString() {
+        return String.format("%s - %s", this.name, this.price);
+    }
 }
