@@ -81,3 +81,8 @@ enum FormaPagamento {
 }
 ```
 
+## Cadastro de Duplas
+
+Você pode fazer o trabalho em dupla ou individualmente, independente da forma escolhida é necessário preencher seu nome no formulário a seguir.
+
+[Formulário para Cadastro de Duplas](https://forms.office.com/Pages/ResponsePage.aspx?id=efUbMfJjakKAqtOibxwK0eieDBqH38dOkFzNioZOjcBURTJaUzFaNzVFQVpVWlZRTDVROFVXOVFYMC4u)
